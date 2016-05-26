@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>华农趣事平台-查看评论</title>
+		<meta name="Homepage hotest" content="查看评论趣事界面" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes"/><!--是否启动webapp功能，会删除默认的苹果工具栏和菜单栏-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/><!--启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色-->
+		<meta name="format-detection" content="telephone=no,email=no"/>
+		<meta name="browsermode" content="application"/>
+		<!-- SEO优化 结束 -->
+		<link type="text/css" rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		<link type="text/css" rel="stylesheet" href="css/home.css" />
+
+		<style>
+			.maincontent{
+				border-radius: 0px !important;
+				border: 0px!important;
+				margin-top: -45px !important;
+			}
+			.comment-block{
+                border-bottom:1px solid #C0C0C0;
+                padding: 0px 15px 20px 20px;
+                height:auto;
+                background: #fff;
+                overflow:auto;
+            }
+            .comment-block ol{
+                border:0px !important;
+                overflow:auto;  /*使ol大小被内容撑开*/
+                text-align: center;
+                vertical-align: middle;
+                margin:5px -15px 0px 0px;
+                padding: 5px 0px -10px 10px;
+            }
+            .comment-block li{
+                float: left;
+                list-style: none;
+                margin-right: 10px;
+            }
+            .comment-block .author{
+            	height:80px;
+            }
+            .comment-block .comName{
+                text-align: left;
+                font-size: 14px;
+            }
+            .comment-block .commentFloorNum{
+                float: right;
+                color: #9C9C9C;
+                width: 50px;
+            }
+            .comment-block .commentFloorNum .floorNum{
+                margin-top:40px;
+            }
+            .comment-block .commentFloorNum .fa{
+                padding-left: 5px;
+            }
+            .comment-block p{
+                float: left;
+                margin-top: -20px;
+            }
+			.blanket{
+				width: 100%;
+				height: 38px;
+			}
+            .publishComments{
+				position:fixed;
+				left:0px;
+				bottom:0px;
+				z-index: 9999;
+				height:40px;
+				line-height:24px;
+				text-align:center;
+				vertical-align: center;
+				background-color:#fff;
+				border-top: 2px solid #ccc;
+			}
+			.publishComments input{
+				outline: none;
+				border: none;
+				float: left;
+				color: #000;
+				margin-left: 5%;
+				width: 80%;
+				height: 35px;
+			}
+			.publishComments button{
+				outline: none;
+				border: none;
+				background: #fff;
+				height: 35px;
+				padding-right: 10px;
+				padding-left: 10px;
+			}
+			.publishComments button .fa{
+				color: gray;
+				font-size: 20px;
+			}
+			body ::-webkit-input-placeholder {
+			  /* WebKit browsers */
+			  color:#ccc !important;
+			}
+			body :-moz-placeholder {
+			  /* Mozilla Firefox 4 to 18 */
+			  color:#ccc !important;
+			}
+			body ::-moz-placeholder {
+			  /* Mozilla Firefox 19+ */
+			 color:#ccc !important;
+			}
+			body :-ms-input-placeholder {
+			  /* Internet Explorer 10+ */
+			  color:#ccc !important;
+			}
+			.send{
+				color: #1d749a !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div data-role="page" data-theme="d" id="checkComments">
+			<!--start home header-->
+			<div data-role="header"  class="data_header" data-tap-toggle="false" style="height:40px;border-bottom:none">
+				<div class="firstHeader">
+					<a href="home-hot.html" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px" rel="external" data-rel="back">返回</a>
+					<!-- <span class="deliver"><i class="fa fa-edit" style="margin-top:-8px;"></i></span> -->
+					<!--此处为点击进入发表趣事界面-->
+				</div>
+			</div>
+			<!--end home header-->
+			<div data-role="content"  class="wrapper">
+				<ul class="content-block"  id="content" >
+					<!--
+                    	作者：DodoMonster
+                    	时间：2015-08-06
+                    	描述：热门趣事1
+                    -->
+					<li class="maincontent">
+						<div class="author">
+							<a href="checkOthers.html" target="_blank" data-ajax="false">
+								<img src="images/userPhoto.jpg">
+								<span id="username">地瓜干拌芋头</span>
+								<br />
+							</a>
+						</div>
+						<div class="content">
+							<p>大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+							</p>
+						</div>
+						<div id="showImg">
+							<img  src="images/img1.jpg" >
+						</div>
+						<div class="stats">
+                            <span class="vote-number">4218</span> 有趣
+                         	·
+                            <span class="share-number">18</span> 收藏
+                            ·
+                            <span class="comments-number">18</span> 评论
+						</div>
+						<div class="stats-buttons" id="qiushi_counts">
+							<ul class="clearfix">
+								<li class="vote_up" onclick="praiseUp(1)">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li class="vote_down" onclick="trampleDown(1)">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<span class="share">
+									<i class="fa fa-heart-o" onclick="collectFun(1)"></i>
+								</span>
+							</ul>
+						</div>
+					</li>
+					<!--
+                    	作者：716282978@qq.com
+                    	时间：2015-08-07
+                    	描述：评论区-评论1
+                    -->
+					<li class="comment-block" id="comments">
+						<ol class="author">
+							<li class="authorPhoto">
+								<a href="checkOthers.html" target="_blank" data-ajax="false"/>
+									<img src="images/userPhoto.jpg">
+								</a>
+							</li>
+							<li class="comName">
+								<a href="#">
+									<br />
+									<br />
+									<span class="authorName">地瓜干拌芋头</span>
+									<br />
+								</a>
+								<span class="showtimes"></span>
+							</li>
+							<li class="commentFloorNum">
+								<span class="floorNum" id="floorNum"> 1 <i class="fa fa-ellipsis-v" id="littleIcon"></i></span>
+							</li>
+						</ol>
+						<p id="user_comments">晒得好大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						</p>
+					</li>
+					<!--
+                    	作者：716282978@qq.com
+                    	时间：2015-08-07
+                    	描述：评论区-评论1
+                    -->
+					<li class="comment-block" id="comments">
+						<ol class="author">
+							<li class="authorPhoto">
+								<a href="checkOthers.html" target="_blank">
+									<img src="images/userPhoto.jpg">
+								</a>
+							</li>
+							<li class="comName">
+								<a href="#">
+									<br />
+									<br />
+									<span class="authorName">地瓜干拌芋头</span>
+									<br />
+								</a>
+							</li>
+							<li class="commentFloorNum">
+								<span class="floorNum" id="floorNum"> 1 <i class="fa fa-ellipsis-v" id="littleIcon"></i></span>
+							</li>
+						</ol>
+						<p id="user_comments">晒得好大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						</p>
+					</li>
+					<!--
+                    	作者：716282978@qq.com
+                    	时间：2015-08-07
+                    	描述：评论区-评论1
+                    -->
+					<li class="comment-block" id="comments">
+						<ol class="author">
+							<li class="authorPhoto">
+								<a href="checkOthers.html" target="_blank">
+									<img src="images/userPhoto.jpg">
+								</a>
+							</li>
+							<li class="comName">
+								<a href="#">
+									<br />
+									<br />
+									<span class="authorName">地瓜干拌芋头</span>
+									<br />
+								</a>
+									<span class="showtimes"></span>
+
+							</li>
+							<li class="commentFloorNum">
+								<span class="floorNum" id="floorNum"> 1 <i class="fa fa-ellipsis-v" id="littleIcon"></i></span>
+							</li>
+						</ol>
+						<p id="user_comments">晒得好大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						</p>
+					</li>
+					<!--
+                    	作者：716282978@qq.com
+                    	时间：2015-08-07
+                    	描述：评论区-评论1
+                    -->
+					<li class="comment-block" id="comments">
+						<ol class="author">
+							<li class="authorPhoto">
+								<a href="checkOthers.html" target="_blank">
+									<img src="images/userPhoto.jpg">
+								</a>
+							</li>
+							<li class="comName">
+								<a href="#">
+									<br />
+									<br />
+									<span class="authorName">地瓜干拌芋头</span>
+									<br />
+								</a>
+									<span class="showtimes"></span>
+
+							</li>
+							<li class="commentFloorNum">
+								<span class="floorNum" id="floorNum"> 1 <i class="fa fa-ellipsis-v" id="littleIcon"></i></span>
+							</li>
+						</ol>
+						<p id="user_comments">晒得好大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头大美烟台诚邀八方来客～赞者鸿运当头
+						</p>
+					</li>
+					<div class="blanket"></div>
+				</ul>
+				<form class="publishComments" action="" method="post" id="publishComments">
+					<input type="text" name="comments" placeholder="你也来说点什么吧......" data-role="none">
+					<button type="submit" data-role="none" id="submitComments"><i class="fa fa-paper-plane"></i></button>
+				</form>
+			</div>
+		</div>
+		<div class="showLogTip" id="showLogTip"><!--显示要先登陆提示框-->
+			<div class="tipHeader">
+				<p><span>提示</span>
+					<span class="closeTip"><i class="fa fa-close"></i></span>
+				</p>
+			</div>
+			<div class="tipContent">您还没有登录，请先进行登陆！</div>
+			<div class="tipFooter">
+				<a href="#registerPage" data-transition="slide" data-role="none">注册</a>
+				<a href="#loginPage" data-transition="slide" data-role="none">登陆</a>
+			</div>
+		</div>
+
+		<!--start login page-->
+		<section data-role="page" data-theme="d" id="loginPage">
+			<!--start login header-->
+			<div data-role="header" class="data_header" data-tap-toggle="false">
+				<a href="#home" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px">返回</a>
+				<h1>登陆</h1>
+				<a href="#registerPage" data-transition="slide" data-role="none" style="margin-top:5px"><i class="fa fa-sign-in"></i></a>
+			</div>
+			<!--end login header-->
+
+			<!--start login content-->
+			<div data-role="content" class="wrapper loginWrapper">
+				<form class="box login_box" action="" id="loginbox" onsubmit="return checkLogin()" method="post">
+					<span class="tip nameErrtip"></span>
+					<input data-role="none" type="text" name="username" placeholder="Username" class="username">
+					<span class="tip pwdErrtip"></span>
+					<input data-role="none" type="password" name="password" placeholder="Password" class="password">
+					<button type="submit">登陆</button>
+				</form>
+			</div>
+			<!--end login content-->
+		</section>
+		<!--end login page-->
+
+		<!--start register page-->
+		<section data-role="page" data-theme="d" id="registerPage">
+			<!--start register header-->
+			<div data-role="header" class="data_header" data-tap-toggle="false">
+				<a href="#loginPage" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px;" >返回</a>
+				<h1>注册</h1>
+				<a href="#home" data-transition="slide" data-role="none" style="margin-top:5px;"><i class="fa fa-home"></i></a>
+			</div>
+			<!--end register header-->
+
+			<!--start register content-->
+			<div data-role="content" class="wrapper registerWrapper">
+				<form class="box register_box" action="" id="registerbox" method="post" onsubmit="return checkRegister()">
+					<label for="username">请设置6-11位由数字或字母组成的账号</label>
+					<input data-role="none" type="text" name="username" placeholder="Username" class="username">
+					<span class="tip nameErrtip"></span>
+					<label for="password">请设置您的不少于6为的密码</label>
+					<input data-role="none" type="password" name="password" placeholder="Password" class="password">
+					<span class="tip pwdErrtip"></span>
+					<label for="againPwd">请重复输入您的密码进行确认</label>
+					<input data-role="none" type="password" name="againPwd" placeholder="Password" class="againPwd">
+					<span class="tip pwdAgainErrtip"></span>
+					<button type="submit" style="color:#53e3a6;background:#fff;margin-top:10px">注册</button>
+				</form>
+			</div>
+			<!--end register content-->
+		</section>
+		<!--end register page-->
+		<div id="showImgFrame"></div><!--显示图片处-->
+        <div id="credit"></div><!--屛罩-->
+
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/homepage.js"></script>
+		<script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script>
+			$(document).ready(function(){
+		    	var screenWidth = $(window).width();//获取屏幕可视区域的宽度。
+				$commentsBox=$(".publishComments input");
+				$submitBtn=$('#submitComments');
+				$(".publishComments").width(screenWidth);//将宽度赋值给bottomDiv使其可以贯穿整个屏幕。
+
+				$(window).scroll(function(){
+					var scrollHeight = $(document).scrollTop();//获取滚动条滚动的高度。
+					if(!window.XMLHttpRequest){
+						$(".publishComments").css("top",screenHeight + scrollHeight - divHeight);
+					}//判断是否为IE6，如果是，执行大括号中内容
+				});
+
+			});
+		</script>
+	</body>
+</html>

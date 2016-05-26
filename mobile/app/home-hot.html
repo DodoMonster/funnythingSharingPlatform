@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>华农趣事平台主页-热门</title>
+		<meta name="Homepage hotest" content="热门主页趣事界面" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes"/><!--是否启动webapp功能，会删除默认的苹果工具栏和菜单栏-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/><!--启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色-->
+		<meta name="format-detection" content="telephone=no,email=no"/>
+		<meta name="browsermode" content="application"/>
+		<!-- SEO优化 结束 -->
+
+		<link type="text/css" rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		<link type="text/css" rel="stylesheet" href="css/home.css" />
+	</head>
+	<body>
+		<!--start home page-->
+		<section data-role="page" data-theme="d" id="home">
+			<!--侧边栏-->
+			<div class="menu">
+				<h3>华农趣事平台<a href="javascript:;" data-role="button" data-icon="arrow-l" data-iconpos="notext">返回</a></h3>
+				<ul>
+					<li style="margin-left:-50px;">
+						<img src="images/logo.png" /><!--此处可替换为用户头像-->
+						<span class="authorTitle">dodomonster</span><!--此处可替换为用户昵称-->
+					</li>
+					<li class="itemlist"><a href="manageMyFun.html" rel="external" data-ajax="false"><i class="fa fa-pencil"></i>我发表的趣事</a></li>
+					<li class="itemlist"><a href="manageMyCollect.html" rel="external" data-ajax="false"><i class="fa fa-heart"></i>我收藏的趣事</a></li>
+					<li class="itemlist"><a href="modifyData.html" rel="external" data-ajax="false"><i class="fa fa-heart"></i>编辑资料</a></li>
+					<li class="itemlist"><a href="login.html" rel="external" data-ajax="false"><i class="fa fa-random"></i>切换账号</a></li>
+					<li class="itemlist"><a href="jascript:;" ><i class="fa fa-sign-out"></i>退出</a></li>
+				</ul>
+			</div>
+			<!--start home header-->
+			<div data-role="header"  class="data_header" data-tap-toggle="false">
+				<div class="firstHeader">
+					<a data-role="none" class="hopToLogin" href="#loginPage" data-transition="slidefade"  style="display:none">登陆/注册</a><!--如果没有登录，则显示登陆/注册-->
+
+					<!--如果用户登陆了，则显示用户头像和昵称-->
+					<span class="authorInfo">
+						<img src="images/logo.png" /><!--此处可替换为用户头像-->
+						<span class="authorTitle">dodomonster</span><!--此处可替换为用户昵称-->
+					</span>
+					<a class="deliver" href="publishFun.html" rel="external"><i class="fa fa-edit"></i></a><!--此处为点击进入发表趣事界面-->
+				</div>
+
+				<div data-role="navbar" class="navbar">
+					<ul>
+						<li>
+							<a href="home-hot.html" data-transition="slide" class="on" >热门</a>
+						</li>
+						<li>
+							<a href="home-video.html" data-transition="slide" data-ajax="false">视频</a>
+						</li>
+						<li>
+							<a href="home-word.html" data-transition="slide" data-ajax="false">纯文</a>
+						</li>
+						<li>
+							<a  href="home-pic.html" data-transition="slide" data-ajax="false">图片</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--end home header-->
+
+			<!--start home content-->
+			<div data-role="content" class="wrapper">
+				<!--下拉刷新-->
+				<!-- <div id="pullDown">
+				    <span class="pullDownIcon"></span><span class="pullDownLabel">刷新ing...</span>
+				</div> -->
+				<!--登录了则显示-->
+				<!-- <ul class="content-block" id="content"> -->
+				<!--没有登录则显示-->
+				<ul class="content-block" id="contentNoneLogin">
+	                <!-- <foreach name="list['thing']" item="thing"> -->
+					<li class="maincontent">
+						<div class="author">
+							<a href="checkOthers.html" rel="external">
+								<img src="images/userPhoto.jpg"><!-- 此处可替换为趣事作者头像 -->
+								<span id="username">111</span><!--此处可替换为趣事作者 -->
+								<br />
+								<span class="showtimes"></span><!-- 此处可替换为发表趣事的时间 -->
+							</a>
+						</div>
+						<div class="content">
+							<p>2222</p><!-- 此处可替换为趣事文本 -->
+						</div>
+						<div id="showImg">
+							<img src="images/img1.jpg">
+						</div><!--此处可替换为图片-->
+						<!-- </if> -->
+						<div class="stats">
+							<span class="vote-number">4218<!-- 此处可替换为点赞的数目 --></span> 有趣 ·
+							<span class="share-number">18<!-- 此处可替换为分享的数目 --></span> 分享 ·
+							<span class="comments-number">18<!-- 此处可替换为评论的数目 --></span> 评论
+						</div>
+						<div class="stats-buttons">
+							<ul class="clearfix">
+								<li class="vote_up" onclick="praiseUp(1)">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li class="vote_down" onclick="trampleDown(1)">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="checkComments.html" rel="external">
+										<i class="fa fa-comment-o" ></i>
+									</a>
+								</li>
+								<span class="share">
+									<i class="fa fa-heart-o" onclick="collectFun(1)"></i>
+								</span>
+							</ul>
+						</div>
+					</li>
+
+					<li class="maincontent">
+						<div class="author">
+							<a href="checkOthers.html" rel="external">
+								<img src="images/userPhoto.jpg"><!-- 此处可替换为趣事作者头像 -->
+								<span id="username">111</span><!--此处可替换为趣事作者 -->
+								<br />
+								<span class="showtimes"></span><!-- 此处可替换为发表趣事的时间 -->
+							</a>
+							<!-- <span class="hotthings" id="hot">
+								<i class="fa fa-fire"></i> 热门
+							</span> -->
+						</div>
+						<div class="content">
+							<p>2222</p><!-- 此处可替换为趣事文本 -->
+						</div>
+						<div class="thumb" id="showImg">
+							<img src="images/img1.jpg">
+						</div><!--此处可替换为图片-->
+						<!-- </if> -->
+						<div class="stats">
+							<span class="vote-number">4218<!-- 此处可替换为点赞的数目 --></span> 有趣 ·
+							<span class="share-number">18<!-- 此处可替换为分享的数目 --></span> 收藏 ·
+							<span class="comments-number">18<!-- 此处可替换为评论的数目 --></span> 评论
+						</div>
+						<div class="stats-buttons" id="qiushi_counts">
+							<ul class="clearfix">
+								<li class="vote_up" onclick="praiseUp(1)">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li class="vote_down" onclick="trampleDown(1)">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="checkComments.html" rel="external" >
+										<i class="fa fa-comment-o" ></i>
+									</a>
+								</li>
+								<span class="share">
+									<i class="fa fa-heart-o"></i>
+								</span>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<!--上拉加载-->
+				<!-- <div id="pullUp">
+				    <span class="pullUpIcon"></span><span class="pullUpLabel">加载更多...</span>
+				</div> -->
+			</div>
+			<!--end home content-->
+		</section>
+		<!--end home page-->
+
+		<!--start login page-->
+		<section data-role="page" data-theme="d" id="loginPage">
+			<!--start login header-->
+			<div data-role="header" class="data_header" data-tap-toggle="false">
+				<a href="#home" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px">返回</a>
+				<h1>登陆</h1>
+				<a href="#registerPage" data-transition="slide" data-role="none" style="margin-top:5px"><i class="fa fa-sign-in"></i></a>
+			</div>
+			<!--end login header-->
+
+			<!--start login content-->
+			<div data-role="content" class="wrapper loginWrapper">
+				<form class="box login_box" action="" id="loginbox" onsubmit="return checkLogin()" method="post">
+					<span class="tip nameErrtip"></span>
+					<input data-role="none" type="text" name="username" placeholder="Username" class="username">
+					<span class="tip pwdErrtip"></span>
+					<input data-role="none" type="password" name="password" placeholder="Password" class="password">
+					<button type="submit">登陆</button>
+				</form>
+			</div>
+			<!--end login content-->
+		</section>
+		<!--end login page-->
+
+		<!--start register page-->
+		<section data-role="page" data-theme="d" id="registerPage">
+			<!--start register header-->
+			<div data-role="header" class="data_header" data-tap-toggle="false">
+				<a href="#loginPage" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px;" >返回</a>
+				<h1>注册</h1>
+				<a href="#home" data-transition="slide" data-role="none" style="margin-top:5px;"><i class="fa fa-home"></i></a>
+			</div>
+			<!--end register header-->
+
+			<!--start register content-->
+			<div data-role="content" class="wrapper registerWrapper">
+				<form class="box register_box" action="" id="registerbox" method="post" onsubmit="return checkRegister()">
+					<label for="username">请设置6-11位由数字或字母组成的账号</label>
+					<input data-role="none" type="text" name="username" placeholder="Username" class="username">
+					<span class="tip nameErrtip"></span>
+					<label for="password">请设置您的不少于6为的密码</label>
+					<input data-role="none" type="password" name="password" placeholder="Password" class="password">
+					<span class="tip pwdErrtip"></span>
+					<label for="againPwd">请重复输入您的密码进行确认</label>
+					<input data-role="none" type="password" name="againPwd" placeholder="Password" class="againPwd">
+					<span class="tip pwdAgainErrtip"></span>
+					<button type="submit" style="color:#53e3a6;background:#fff;margin-top:10px">注册</button>
+				</form>
+			</div>
+			<!--end register content-->
+		</section>
+		<!--end register page-->
+		<!--显示图片处-->
+		<div id="showImgFrame"></div>
+
+		<!--屛罩-->
+		<div id="credit"></div>
+
+		<div class="showLogTip" id="showLogTip"><!--显示要先登陆提示框-->
+			<div class="tipHeader">
+				<p><span>提示</span>
+					<span class="closeTip"><i class="fa fa-close"></i></span>
+				</p>
+			</div>
+			<div class="tipContent">您还没有登录，请先进行登陆！</div>
+			<div class="tipFooter">
+				<a href="#registerPage" data-transition="slide" data-role="none">注册</a>
+				<a href="#loginPage" data-transition="slide" data-role="none">登陆</a>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script  src="js/homepage.js"></script>
+		<!-- <script src="js/iscroll.js"></script> -->
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+
+		<if condition="$list['status']">
+			<script type="text/javascript">
+				//显示侧边栏
+				function showNav(){
+					$(".menu").addClass("show");
+					$("section").addClass("hide");
+					$("section").addClass("hideScroll");
+					$(".authorInfo").css("visibility","hidden");
+				}
+				$(".data_header img").click(showNav);//点击头像显示侧边栏
+				//隐藏侧边栏
+				function hideNav(){
+					$(".menu").removeClass("show");
+					$("section").removeClass("hide");
+					$("section").removeClass("hideScroll");
+					$(".authorInfo").css("visibility","visible");
+				}
+				$(".menu h3 a").click(hideNav);//点击返回按钮图标隐藏侧边栏
+
+				//在主页面左滑隐藏侧边栏
+				$("#content").swipeleft(function(e){
+					hideNav();
+				});
+
+				//在主页面右滑显示侧边栏
+				$("#content").swiperight(function(e){
+					showNav();
+				});
+
+				$(document).on("pageinit","#home",function(){
+					$("#contentNoneLogin").swiperight(function(e){//在注册页面右滑显示登陆页面
+						$.mobile.changePage("#loginPage",{
+							transition:"slide",
+							reverse:true,
+							allowSamePageTransition:true
+						});
+					});
+				});
+				var screenHeight = $(window).height()-100+'px';//获取屏幕可视区域的宽度。
+				$loginBox=$(".login_box");
+				$registerBox=$(".register_box");
+				$loginBox.height(screenHeight);//将宽度赋值给bottomDiv使其可以贯穿整个屏幕。
+				$registerBox.height(screenHeight);//将宽度赋值给bottomDiv使其可以贯穿整个屏幕。
+			</script>
+		<!-- </if> -->
+	</body>
+</html>

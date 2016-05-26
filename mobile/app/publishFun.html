@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>华农趣事平台-发表趣事界面</title>
+		<meta name="pictureHomepage hotest" content="发表趣事界面" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes"/><!--是否启动webapp功能，会删除默认的苹果工具栏和菜单栏-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/><!--启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色-->
+		<meta name="format-detection" content="telephone=no,email=no"/>
+		<meta name="browsermode" content="application"/>
+		<!-- SEO优化 结束 -->
+		<link type="text/css" rel="stylesheet" href="css/font-awesome/css/
+		font-awesome.min.css"/>
+		<link href="css/home.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+
+		<style>
+        .wrapper{
+			color: #9c9c9c;
+			position: relative;
+			top: -20px;
+			width: 100% !important;
+        }
+        #publishFun{
+			position: absolute !important;
+			left: 0;
+        }
+        #publishFun textarea{
+			margin-left:10px;
+            position: relative;
+			margin-top: 10px;
+        }
+		#destination{
+			display:none;
+			/*width:100%;*/
+			height:200px;
+			margin-left: 10px;
+			background: #fff;
+            filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(true,sizingMethod=scale);
+        }
+		footer{
+			background: #1fa67a;
+			border-top: 2px solid #ccc;
+			height:30px;
+			width: 100%;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+		}
+		footer a{
+			display: inline-block;
+			width: 31%;
+			height: 30px;
+			line-height: 30px;
+			color: #fff !important;
+		}
+		#choosePhoto{
+			text-align: left;
+			margin-left: 5px;
+		}
+		#takePhoto{
+			text-align: center;
+		}
+		#chooseVideo{
+			float: right;
+			text-align: right;
+			margin-right: 5px;
+		}
+		#choosePhoto i,#takePhoto i,#chooseVideo i{
+			font-size: 20px;
+			width: 30px;
+			z-index: 9;
+			margin-top: 5px;
+		}
+		footer input{
+			width: 30px;
+			opacity: 0;
+			border: none !important;
+			outline: none !important;
+			z-index: 1;
+			position: relative;
+			bottom: 20px;
+		}
+		body ::-webkit-input-placeholder {
+		  /* WebKit browsers */
+		  color:#ccc !important;
+		}
+		body :-moz-placeholder {
+		  /* Mozilla Firefox 4 to 18 */
+		  color:#ccc !important;
+		}
+		body ::-moz-placeholder {
+		  /* Mozilla Firefox 19+ */
+		 color:#ccc !important;
+		}
+		body :-ms-input-placeholder {
+		  /* Internet Explorer 10+ */
+		  color:#ccc !important;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div data-role="page" data-theme="d" data-add-back-btn="true" id="publish">
+			<!--start home header-->
+			<div data-role="header"  class="data_header" data-tap-toggle="false" style="height:40px;border-bottom:none">
+				<div class="firstHeader">
+					<a href="home-hot.html" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px" rel="external">返回</a>
+					<a class="deliver"><i class="fa fa-send"></i></a><!--此处为点击进入发表趣事界面-->
+				</div>
+			</div>
+			<!--end home header-->
+			<div data-role="content"  class="wrapper">
+                <form action="" method="post" id="publishFun"  data-ajax="false">
+                    <textarea name="name" data-role="none" placeholder="请发表你的趣事......"></textarea>
+					<div id="destination"></div>
+					<footer>
+						<p>
+							<a href="javascript:;" id="choosePhoto">
+								<i class="fa fa-photo">
+									<input type="file" accept="image/png" id="imgUpload" name="imgUpload" draggable="true" single data-role="none">
+								</i>
+							</a>
+							<a href="javascript:;" id="takePhoto">
+								<i class="fa fa-camera">
+									<input type="file" id="imgUpload" name="imgUpload" draggable="true" single data-role="none">
+								</i>
+							</a>
+							<a href="javascript:;" id="chooseVideo">
+								<i class="fa fa-video-camera">
+									<input type="file" id="imgUpload" name="imgUpload" draggable="true" single data-role="none">
+								</i>
+							</a>
+						</p>
+					</footer>
+                </form>
+			</div>
+		</div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/upLoadImg.js"></script>
+	<script type="text/javascript">
+		var bodyW=document.body.clientWidth-20;
+		var bodyH=document.body.clientHeight-90;
+		$("#publishFun textarea").css("width",bodyW);
+		$("#publishFun textarea").css("height",bodyH);
+
+		$(document).on("pageinit","#publish",function(){
+			$(".data_header a").on("tap",function(){
+				$("#publishFun")[0].reset();
+			});
+		});
+	</script>
+	</body>
+</html>

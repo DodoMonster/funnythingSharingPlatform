@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>华农趣事平台-查看他人发表的趣事</title>
+		<meta name="pictureHomepage hotest" content="查看他人发表的趣事" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+		<!-- SEO优化 结束 -->
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"/>
+		<link type="text/css" rel="stylesheet" href="css/homepage.css" />
+		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="js/homepage.js"></script>
+		<script type="text/javascript" src="js/checkOthers.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<style>
+			.author{
+				background: #FCFCFC !important;
+				padding: 10px 0px 0px 20px;
+			}
+			.maincontent{
+				background: #fff !important;
+			}
+			.maincontent .times{
+				color: #00BB9C;
+				font-size: 18px;
+				text-align: left;
+				margin-left: 0px;
+			}
+			.maincontent .content{
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div data-role="page" data-theme="d">
+			<!--
+            	作者：DodoMonster
+            	时间：2015-08-06
+            	描述：查看他人趣事
+            -->
+			<div data-role="content"  class="wrapper" id="homepage_pic">
+				
+				<ul class="content-block"  id="content" >
+					<!--
+                    	作者：DodoMonster
+                    	时间：2015-08-06
+                    	描述：查看他人发表的趣事1
+                    -->
+                    <li class="author">
+						<img src="images/userPhoto.jpg">
+						<span id="username">地瓜干拌芋头</span>
+						<br />
+					</li>
+					<li class="maincontent">
+							<span class="times"></span>
+						<div class="content">
+							<p>大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+							</p>
+						</div>
+						<div class="showImg">
+							<img  src="images/homepage_pic1.jpg" >
+						</div>
+						<div class="stats">
+                            <span class="number"><em class="vote-number"></em> 有趣  ·</span> 
+                            <span class="number"><em class="share-number"></em> 分享  ·</span> 
+                            <span class="number"><em class="comments-number"></em> 评论  </span>                             
+						</div>
+						<div class="stats-buttons" id="qiushi_counts">
+							<ul class="clearfix">
+								<li  class="vote_up">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li  class="vote_down">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="javascript:;" target="_blank" data-ajax="false" onclick="window.demo.clickOnAndroid()">
+										<i class="fa fa-comment-o" style="color:#9c9c9c;"></i>
+									</a>
+								</li>
+								<span class="share">
+									<i class="fa fa-slideshare" style="color:#9c9c9c;"></i>
+								</span>
+							</ul>
+						</div>
+					</li>
+					<!--
+                    	作者：DodoMonster
+                    	时间：2015-08-06
+                    	描述：查看他人发表的趣事2
+                    -->
+					<!--<div class="maincontent">
+							<span class="times"></span>
+						<div class="content">
+							<p>大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+							</p>
+						</div>
+						<div class="showImg" >
+							<img  src="images/homepage_pic1.jpg" >
+						</div>
+						<div class="stats">
+                            <span class="number"><em class="vote-number">4218</em> 有趣  ·</span> 
+                            <span class="number"><em class="share-number">18</em> 分享  ·</span> 
+                            <span class="number"><em class="comments-number">21</em> 评论  </span>   
+						</div>
+						<div class="stats-buttons" id="qiushi_counts">
+							<ul class="clearfix">
+								<li  class="vote_up">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li  class="vote_down">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="checkComments.html" target="_blank"  onclick="window.demo.clickOnAndroid()">
+										<i class="fa fa-comment-o" style="color:#9c9c9c;"></i>
+									</a>
+								</li>
+								<span class="share">
+									<i class="fa fa-slideshare" style="color:#9c9c9c;"></i>
+								</span>
+							</ul>
+						</div>
+					</div>
+					<!--
+                    	作者：DodoMonster
+                    	时间：2015-08-06
+                    	描述：查看他人发表的趣事3
+                    -->
+					<!--<div class="maincontent">
+							<span class="times"></span>
+						<div class="content">
+							<p>大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+								大美烟台诚邀八方来客～赞者鸿运当头
+							</p>
+						</div>
+						<div class="showImg">
+							<img  src="images/homepage_pic1.jpg" >
+						</div>
+						<div class="stats">
+                            <span class="number upNum"><em class="vote-number">4218</em> 有趣  ·</span> 
+                            <span class="number shareNum"><em class="share-number">18</em> 分享  ·</span> 
+                            <span class="number commNum"><em class="comments-number">21</em> 评论  </span>   
+						</div>
+						<div class="stats-buttons" id="qiushi_counts">
+							<ul class="clearfix">
+								<li  class="vote_up">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li  class="vote_down">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="checkComments.html" target="_blank"  onclick="window.demo.clickOnAndroid()">
+										<i class="fa fa-comment-o" style="color:#9c9c9c;"></i>
+									</a>
+								</li>
+								<span class="share">
+									<i class="fa fa-slideshare" style="color:#9c9c9c;"></i>
+								</span>
+							</ul>
+						</div>
+					</div>				-->
+					
+				</ul>				
+			</div>
+		
+			<!--
+            	作者：716282978@qq.com
+            	时间：2015-08-06
+            	描述：图片弹出层
+            -->
+            <div id="showImgFrame"></div><!--显示图片处-->
+            <div id="credit"></div><!--屛罩-->
+            <!--
+            	作者：716282978@qq.com
+            	时间：2015-08-07
+            	描述：分享弹出层
+            -->
+            <div id="showShareFrame">
+            	<p>分享给朋友</p>
+            	<ol class="sharePlace">
+            		<li class="weixinQuan">
+            			<a href="#" data-ajax="false"><img src="images/share_weixinQuan.png"></a>
+            			<br />
+            			<span>微信朋友圈</span>
+            		</li>
+            		<li class="weixin">
+            			<a href="#" data-ajax="false"><img src="images/share_weixin.jpg"></a>
+            			<br />
+            			<span>微信好友</span>
+            		</li>
+            		<li class="qqFriend">
+            			<a href="#" data-ajax="false"><img src="images/share_qq.png"></a>
+                        <br />
+            			<span>QQ好友</span>
+            		</li>
+            		<li class="qzone">
+            			<a href="#" data-ajax="false"><img src="images/share_qzone.jpg"></a>
+            			<br />
+            			<span>QQ空间</span>
+            		</li>
+            		<li class="weibo">
+            			<a href="#" data-ajax="false"><img src="images/share_weibo.png"></a>
+            			<br />
+            			<span>新浪微博</span>
+            		</li>
+            		<li class="bdTieba">
+            			<a href="#" data-ajax="false"><img src="images/share_bdtieba.png"></a>
+            			<br />
+            			<span>百度贴吧</span>
+            		</li>
+            	</ol>
+            	<hr />
+            	<ol class="operation" id="operation">
+            		<li id="copy">
+            			<a href="#" data-ajax="false"><i class="fa fa-chain"></i></a>
+            			<span>复制</span>
+            		</li>
+            		<li id="collect">
+            			<a href="#" data-ajax="false"><i class="fa fa-star-o"></i></a>
+            			<span>收藏</span>
+            		</li>
+            		<li id="report">
+            			<a href="#" data-ajax="false"><i class="fa fa-ban"></i></a>
+            			<span>举报</span>
+            		</li>
+            	</ol>
+            </div>
+           
+			<!--
+            	作者：DodoMonster
+            	时间：2015-08-06
+            	描述：主页最热趣事footer
+     		-->      
+		</div>
+
+	</body>
+</html>

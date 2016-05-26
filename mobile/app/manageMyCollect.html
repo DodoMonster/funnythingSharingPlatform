@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>华农趣事平台-管理我收藏的趣事</title>
+		<meta name="Homepage hotest" content="管理我收藏的趣事" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes"/><!--是否启动webapp功能，会删除默认的苹果工具栏和菜单栏-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/><!--启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色-->
+		<meta name="format-detection" content="telephone=no,email=no"/>
+		<meta name="browsermode" content="application"/>
+		<!-- SEO优化 结束 -->
+
+		<link type="text/css" rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		<link type="text/css" rel="stylesheet" href="css/home.css" />
+		<link type="text/css" rel="stylesheet" href="css/manage.css" />
+
+	</head>
+	<body>
+
+		<!--start home page-->
+		<section data-role="page" data-theme="d" id="home">
+			<!--start home header-->
+			<div data-role="header"  class="data_header" data-tap-toggle="false">
+				<div class="firstHeader">
+					<a data-role="none" class="hopToLogin" href="home-hot.html" data-transition="slidefade" rel="external"><i class="fa fa-chevron-left"></i> 管理我的糗事</a><!--如果没有登录，则显示登陆/注册-->
+				</div>
+
+				<div data-role="navbar" class="navbar">
+					<ul class="manageNav">
+						<li>
+							<a href="manageMyFun.html" data-transition="slide" data-ajax="false">我的趣事</a>
+						</li>
+						<li>
+							<a href="manageMyCollect.html" data-transition="slide" class="on" >我的收藏</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--end home header-->
+
+			<!--start home content-->
+			<div data-role="content" class="wrapper">
+				<!--下拉刷新-->
+				<!-- <div id="pullDown">
+				    <span class="pullDownIcon"></span><span class="pullDownLabel">刷新ing...</span>
+				</div> -->
+				<ul class="content-block" id="content">
+	                <!-- <foreach name="list['thing']" item="thing"> -->
+					<li class="maincontent">
+						<span class="cancelMyCollect" id="manage">
+							<i class="fa fa-heart"></i>
+                    	</span>
+						<span id="funId" style="display:none">趣事Id</span>
+						<div class="author">
+							<a href="checkOthers.html" rel="external">
+								<img src="images/userPhoto.jpg"><!-- 此处可替换为趣事作者头像 -->
+								<span id="username">111</span><!--此处可替换为趣事作者 -->
+								<br />
+								<!-- <span class="share">
+									<i class="fa fa-heart" onclick="collectFun(1)"></i>
+								</span> -->
+							</a>
+						</div>
+						<div class="content">
+							<p>2222</p><!-- 此处可替换为趣事文本 -->
+						</div>
+						<div id="showImg">
+							<img src="images/img1.jpg">
+						</div><!--此处可替换为图片-->
+						<!-- </if> -->
+						<div class="stats">
+							<span class="vote-number">4218<!-- 此处可替换为点赞的数目 --></span> 有趣 ·
+							<span class="share-number">18<!-- 此处可替换为分享的数目 --></span> 收藏 ·
+							<span class="comments-number">18<!-- 此处可替换为评论的数目 --></span> 评论
+						</div>
+						<div class="stats-buttons">
+							<ul class="clearfix">
+								<li class="vote_up" onclick="praiseUp(1)">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li class="vote_down" onclick="trampleDown(1)">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="checkComments.html" rel="external">
+										<i class="fa fa-comment-o" ></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="maincontent">
+						<span class="cancelMyCollect" id="manage">
+							<i class="fa fa-heart"></i>
+                    	</span>
+						<div class="author">
+							<a href="checkOthers.html" rel="external">
+								<img src="images/userPhoto.jpg"><!-- 此处可替换为趣事作者头像 -->
+								<span id="username">111</span><!--此处可替换为趣事作者 -->
+								<br />
+								<!-- <span class="share">
+									<i class="fa fa-heart" onclick="collectFun(1)"></i>
+								</span> -->
+							</a>
+						</div>
+						<div class="content">
+							<p>2222</p><!-- 此处可替换为趣事文本 -->
+						</div>
+						<div id="showImg">
+							<img src="images/img1.jpg">
+						</div><!--此处可替换为图片-->
+						<!-- </if> -->
+						<div class="stats">
+							<span class="vote-number">4218<!-- 此处可替换为点赞的数目 --></span> 有趣 ·
+							<span class="share-number">18<!-- 此处可替换为分享的数目 --></span> 收藏 ·
+							<span class="comments-number">18<!-- 此处可替换为评论的数目 --></span> 评论
+						</div>
+						<div class="stats-buttons">
+							<ul class="clearfix">
+								<li class="vote_up" onclick="praiseUp(1)">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li class="vote_down" onclick="trampleDown(1)">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="checkComments.html" rel="external">
+										<i class="fa fa-comment-o" ></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="maincontent">
+						<span class="cancelMyCollect" id="manage">
+							<i class="fa fa-heart"></i>
+                    	</span>
+						<div class="author">
+							<a href="checkOthers.html" rel="external">
+								<img src="images/userPhoto.jpg"><!-- 此处可替换为趣事作者头像 -->
+								<span id="username">111</span><!--此处可替换为趣事作者 -->
+								<br />
+								<!-- <span class="share">
+									<i class="fa fa-heart" onclick="collectFun(1)"></i>
+								</span> -->
+							</a>
+						</div>
+						<div class="content">
+							<p>2222</p><!-- 此处可替换为趣事文本 -->
+						</div>
+						<div id="showImg">
+							<img src="images/img1.jpg">
+						</div><!--此处可替换为图片-->
+						<!-- </if> -->
+						<div class="stats">
+							<span class="vote-number">4218<!-- 此处可替换为点赞的数目 --></span> 有趣 ·
+							<span class="share-number">18<!-- 此处可替换为分享的数目 --></span> 收藏 ·
+							<span class="comments-number">18<!-- 此处可替换为评论的数目 --></span> 评论
+						</div>
+						<div class="stats-buttons">
+							<ul class="clearfix">
+								<li class="vote_up" onclick="praiseUp(1)">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li class="vote_down" onclick="trampleDown(1)">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="checkComments.html" rel="external">
+										<i class="fa fa-comment-o" ></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<!--上拉加载-->
+				<!-- <div id="pullUp">
+				    <span class="pullUpIcon"></span><span class="pullUpLabel">加载更多...</span>
+				</div> -->
+			</div>
+			<!--end home content-->
+		</section>
+		<!--end home page-->
+
+		<!--删除提示框-->
+		<div id="deleteTip">
+    		<p class="deleteTip-header">
+    			<i class="fa fa-exclamation-circle"></i>
+    			删除确认
+    		</p>
+    		<p class="deleteTip-content">
+    			<i class="fa fa-question-circle"></i>
+    			确认删除这条趣事吗？
+    		</p>
+    		<span id="cancelBtn">取消</span>
+    		<span id="confirmBtn">确认</span>
+   		</div>
+		<!--显示图片处-->
+		<div id="showImgFrame"></div>
+
+		<!--屛罩-->
+		<div id="credit"></div>
+
+		<script  src="js/jquery-2.1.4.min.js"></script>
+		<script  src="js/homepage.js"></script>
+		<script  src="js/manage.js"></script>
+		<script  src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+	</body>
+</html>

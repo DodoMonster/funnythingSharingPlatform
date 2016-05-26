@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>华农趣事平台-修改资料</title>
+		<meta name="pictureHomepage hotest" content="修改资料界面" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes"/><!--是否启动webapp功能，会删除默认的苹果工具栏和菜单栏-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/><!--启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色-->
+		<meta name="format-detection" content="telephone=no,email=no"/>
+		<meta name="browsermode" content="application"/>
+		<!-- SEO优化 结束 -->
+		<link type="text/css" rel="stylesheet" href="css/font-awesome/css/
+		font-awesome.min.css"/>
+		<link href="css/home.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+		<style>
+	        .wrapper{
+				color: #9c9c9c;
+				position: relative;
+				top: -10px;
+				width: 100% !important;
+	        }
+			.wrapper input,.wrapper label{
+				color:#333;
+			}
+			#modify .wrapper a{
+				display: block;
+				border-bottom: 1px solid #ccc;
+				padding: 20px 20px;
+				margin-right: 10px;
+			}
+			.firstHeader a{
+				border: none !important;
+				outline: none !important;
+				box-shadow: none !important;
+			}
+			#modify .wrapper img,#modify .wrapper span{
+				float: right;
+			}
+			#modify .wrapper img{
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				border: 1px solid #fff;
+				margin-top: -10px;
+			}
+			#clipArea,#view{
+				width:100px !important;
+				height: 100px !important;
+				border: 1px solid #000;
+				margin:0 auto;
+				background: #fff;
+			}
+			#changePhoto{
+				opacity: 0;
+				position: relative;
+			    top: -50px;
+			    height: 40px;
+			}
+			#photoBtn,#clipBtn{
+				display: block;
+				width: 100%;
+				margin:0 auto;
+				height: 40px;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 40px;
+				background: #1d749a;
+				border-radius: 5px;
+				margin-bottom: 10px;
+			}
+			input{
+				background: #fff !important;
+			}
+		</style>
+	</head>
+
+	<body ontouchstart="">
+		<div data-role="page" data-theme="d"  id="modify">
+			<!--start home header-->
+			<div data-role="header"  class="data_header" data-tap-toggle="false" style="height:40px;border-bottom:none">
+				<div class="firstHeader">
+					<a href="home-hot.html" data-transition="slide"  data-role="button" data-icon="home" data-iconpos="notext" style="margin-top:5px" rel="external">返回</a>
+				</div>
+			</div>
+			<!--end home header-->
+			<div data-role="content"  class="wrapper">
+				<a href="modifyPhoto.html" rel="external" data-ajax="none">头像
+                	<img src="images/logo.png" alt="头像" />
+				</a>
+				<a href="#modifyName">昵称
+					<span>dodomonster</span>
+				</a>
+                <a href="#modifyPwd" class="modifyPwd">修改密码</span></a>
+				<a href="#modifyQuestion" class="modifyQue">修改密保</span></a>
+            </div>
+		</div>
+
+		<div data-role="page" data-theme="d" id="modifyName">
+            <div data-role="header"  class="data_header" data-tap-toggle="false" style="height:40px;border-bottom:none">
+				<div class="firstHeader">
+					<a href="#modify" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px">返回</a>
+					<a class="deliver" onclick="checkNewName();"><i class="fa fa-check"></i></a><!--此处为点击进入发表趣事界面-->
+				</div>
+            </div>
+            <div data-role="content">
+				<form action="" method="post" id="changeName" name="changeName"></form>
+	                <label for="newUserName">新的昵称</label>
+	                <input type="text" name="newUserName" id="newUserName">
+					<span class="tip nameErrtip"></span>
+				</form>
+            </div>
+        </div>
+		<div data-role="page" data-theme="d" id="modifyPwd">
+            <div data-role="header"  class="data_header" data-tap-toggle="false" style="height:40px;border-bottom:none">
+				<div class="firstHeader">
+					<a href="#modify" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px">返回</a>
+					<a class="deliver" onclick="checkNewPwd();"><i class="fa fa-check"></i></a><!--此处为点击进入发表趣事界面-->
+				</div>
+            </div>
+            <div data-role="content">
+				<form action="" action="post" name="changePwd" id="changePwd"></form>
+	                <label for="newPassword">新的密码（不能少于6位）</label>
+	                <input type="password" name="newPassword" id="newPassword">
+					<span class="tip pwdErrtip"></span>
+					<label for="newPasswordAgain">重复密码</label>
+	                <input type="password" name="newPasswordAgain" id="newPasswordAgain">
+					<span class="tip againPwdErrtip"></span>
+				</form>
+            </div>
+        </div>
+        <div data-role="page" data-theme="d" id="modifyQuestion">
+            <div data-role="header"  class="data_header" data-tap-toggle="false" style="height:40px;border-bottom:none">
+				<div class="firstHeader">
+					<a href="#modify" data-transition="slide"  data-role="button" data-icon="arrow-l" data-iconpos="notext" style="margin-top:5px">返回</a>
+					<a class="deliver" onclick="checkNewQue();"><i class="fa fa-check"></i></a><!--此处为点击进入发表趣事界面-->
+				</div>
+            </div>
+            <div data-role="content">
+				<form action="" method="post" id="changeQue" name="changeQue">
+					<label for="password">新的密保问题</label>
+	                <input type="text" name="question" id="question">
+					<span class="tip queErrtip"></span>
+	                <label for="passwordAgain">新的密保答案</label>
+	                <input type="password" name="queAnswer" id="queAnswer">
+					<span class="tip queAnswerErrtip"></span>
+				</form>
+            </div>
+        </div>
+    <script src="public/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="public/hammer.js"></script>
+	<script src="js/modifyData.js"></script>
+	<script src="public/iscroll-zoom.js"></script>
+	<script src="public/jquery.photoClip.js"></script>
+	<script type="text/javascript">
+		var bodyW=document.body.clientWidth-20;
+		var bodyH=document.body.clientHeight-90;
+
+		$("#clipArea").photoClip({
+			width: 100,
+			height: 100,
+			file: "#changePhoto",
+			view: "#view",
+			ok: "#clipBtn",
+			loadStart: function() {
+				console.log("照片读取中");
+			},
+			loadComplete: function() {
+				console.log("照片读取完成");
+			},
+			clipFinish: function(dataURL) {
+				console.log(dataURL);
+			}
+		});
+		// $("#publishFun textarea").css("width",bodyW);
+		// $("#publishFun textarea").css("height",bodyH);
+        //
+		// $(document).on("pageinit","#publish",function(){
+		// 	$(".data_header a").on("tap",function(){
+		// 		$("#publishFun")[0].reset();
+		// 	});
+		// });
+	</script>
+	</body>
+</html>

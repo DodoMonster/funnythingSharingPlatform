@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>华农趣事平台主页-图片</title>
+		<meta name="pictureHomepage" content="纯图片趣事界面" />
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes"/><!--是否启动webapp功能，会删除默认的苹果工具栏和菜单栏-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/><!--启动webapp功能时，显示手机信号、时间、电池的顶部导航栏的颜色-->
+		<meta name="format-detection" content="telephone=no,email=no"/>
+		<meta name="browsermode" content="application"/>
+		<meat name="x5-page-mode" content="app"/>
+		<!-- SEO优化 结束 -->
+
+		<link type="text/css" rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+		<link type="text/css" rel="stylesheet" href="css/home.css" />
+	</head>
+
+	<body>
+
+		<!--start homePic page-->
+		<section data-role="page" data-theme="d" id="homePic">
+
+			<!--侧边栏-->
+			<div class="menu">
+				<h3>华农趣事平台<a href="javascript:;" data-role="button" data-icon="arrow-l" data-iconpos="notext">返回</a></h3>
+				<ul>
+					<li style="margin-left:-50px;">
+						<img src="images/logo.png" /><!--此处可替换为用户头像-->
+						<span class="authorTitle">dodomonster</span><!--此处可替换为用户昵称-->
+					</li>
+					<li class="itemlist"><a href="manageMyFun.html"><i class="fa fa-pencil"></i>我发表的趣事</a></li>
+					<li class="itemlist"><a href="manageMyCollect.html"><i class="fa fa-heart"></i>我收藏的趣事</a></li>
+					<li class="itemlist"><a href="login.html"><i class="fa fa-random"></i>切换账号</a></li>
+					<li class="itemlist"><a href="jascript:;"><i class="fa fa-sign-out"></i>退出</a></li>
+				</ul>
+			</div>
+
+			<!--start homePic header-->
+			<div data-role="header"  class="data_header" data-tap-toggle="false">
+				<div class="firstHeader">
+					<a data-role="none" class="hopToLogin" >登陆/注册</a><!--如果没有登录，则显示登陆/注册-->
+
+					<!--如果用户登陆了，则显示用户头像和昵称-->
+					<span class="authorInfo" style="display:none">
+						<img src="images/logo.png" /><!--此处可替换为用户头像-->
+						<span class="authorTitle">dodomonster</span><!--此处可替换为用户昵称-->
+					</span>
+					<span class="deliver"><i class="fa fa-pencil write"></i></span><!--此处为点击进入发表趣事界面-->
+				</div>
+
+				<div data-role="navbar" class="navbar">
+					<ul>
+						<li>
+							<a href="home-hot.html" data-transition="slide" rel="external" data-transition="slide" >热门</a>
+						</li>
+						<li>
+							<a href="home-video.html" data-transition="slide" rel="external" data-transition="slide">视频</a>
+						</li>
+						<li>
+							<a href="home-word.html" data-transition="slide" rel="external" data-transition="slide">纯文</a>
+						</li>
+						<li>
+							<a  href="home-pic.html" class="on">图片</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!--end homePic header-->
+
+			<!--start homePic content-->
+			<div data-role="content" class="wrapper" id="homepage_pic">
+				<ul class="content-block" id="content">
+	                <!-- <foreach name="list['thing']" item="thing"> -->
+					<li class="maincontent">
+						<div class="author">
+							<a href="checkOthers.html">
+								<img src="images/userPhoto.jpg"><!-- 此处可替换为趣事作者头像 -->
+								<span id="username">111</span><!--此处可替换为趣事作者 -->
+								<br />
+								<span class="showtimes"></span><!-- 此处可替换为发表趣事的时间 -->
+							</a>
+						</div>
+						<div class="content">
+							<p>2222</p><!-- 此处可替换为趣事文本 -->
+						</div>
+						<div class="thumb" id="showImg">
+							<img src="images/img1.jpg">
+						</div><!--此处可替换为图片-->
+						<!-- </if> -->
+						<div class="stats">
+							<span class="vote-number">4218<!-- 此处可替换为点赞的数目 --></span> 有趣 ·
+							<span class="share-number">18<!-- 此处可替换为分享的数目 --></span> 分享 ·
+							<span class="comments-number">18<!-- 此处可替换为评论的数目 --></span> 评论
+						</div>
+						<div class="stats-buttons" id="qiushi_counts">
+							<ul class="clearfix">
+								<li class="vote_up" onclick="praiseUp(1)">
+									<i class="fa fa-thumbs-o-up"></i>
+								</li>
+								<li class="vote_down" onclick="trampleDown(1)">
+									<i class="fa fa-thumbs-o-down"></i>
+								</li>
+								<li class="comments">
+									<a href="javascript:;" target="_blank" class="toComments">
+										<i class="fa fa-comment-o" style="color:#9c9c9c;"></i>
+									</a>
+									<span class="funId">1</span><!-- 此处可替换为趣事id-->
+								</li>
+								<span class="share">
+									<i class="fa fa-slideshare" style="color:#9c9c9c;"></i>
+								</span>
+							</ul>
+						</div>
+					</li>
+							<!-- </if>
+						</foreach> -->
+				</ul>
+			</div>
+			<!--end homePic content-->
+		</section>
+		<!--end homePic page-->
+
+
+			<!-- 作者：716282978@qq.com
+            	时间：2015-08-06
+            	描述：图片弹出层 -->
+		<div id="showImgFrame"></div>
+		<!--显示图片处-->
+
+		<!--屛罩-->
+		<div id="credit"></div>
+
+		<!--
+        	作者：716282978@qq.com
+        	时间：2015-08-07
+        	描述：分享弹出层
+        -->
+		<div id="showShareFrame">
+			<p>分享给朋友</p>
+			<ol class="sharePlace">
+				<li class="weixinQuan">
+					<a href="#"><img src="images/share_weixinQuan.png"></a>
+					<br />
+					<span>微信朋友圈</span>
+				</li>
+				<li class="weixin">
+					<a href="#"><img src="images/share_weixin.jpg"></a>
+					<br />
+					<span>微信好友</span>
+				</li>
+				<li class="qqFriend">
+					<a href="#"><img src="images/share_qq.png"></a>
+					<br />
+					<span>QQ好友</span>
+				</li>
+				<li class="qzone">
+					<a href="#"><img src="images/share_qzone.jpg"></a>
+					<br />
+					<span>QQ空间</span>
+				</li>
+				<li class="weibo">
+					<a href="#"><img src="images/share_weibo.png"></a>
+					<br />
+					<span>新浪微博</span>
+				</li>
+				<li class="bdTieba">
+					<a href="#"><img src="images/share_bdtieba.png"></a>
+					<br />
+					<span>百度贴吧</span>
+				</li>
+			</ol>
+			<hr />
+			<ol class="operation" id="operation">
+				<li id="copy">
+					<a href="#"><i class="fa fa-chain"></i></a>
+					<span>复制</span>
+				</li>
+				<li id="collect">
+					<a href="#"><i class="fa fa-star-o"></i></a>
+					<span>收藏</span>
+				</li>
+				<li id="report">
+					<a href="#"><i class="fa fa-ban"></i></a>
+					<span>举报</span>
+				</li>
+			</ol>
+		</div>
+
+		<div class="showLogTip" id="showLogTip">
+			<div class="tipHeader">
+				<p><span>提示</span>
+					<span class="closeTip"><i class="fa fa-close"></i></span>
+				</p>
+			</div>
+			<div class="tipContent">您还没有登录，请先进行登陆！</div>
+			<div class="tipFooter">
+				<a href="">游客</a>
+				<a href="">登陆</a>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script  src="js/homepage.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.js"></script>
+	</body>
+</html>

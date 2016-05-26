@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <title>华农趣事平台-管理我收藏的趣事</title>
+        <meta name="pictureHomepage hotest" content="管理我收藏的趣事" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>     
+        <!-- SEO优化 结束 -->
+        <link type="text/css" rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css"/>
+        <link type="text/css" rel="stylesheet" href="css/manageMyFun.css" />
+        <script type="text/javascript"  src="js/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="js/manageMyCollect.js"></script>
+        <script type="text/javascript" src="js/homepage.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+    </head>
+    <body>
+        <div data-role="page" data-theme="d" data-dom-cache="true">
+        		<!--
+                	作者：DodoMonster
+                	时间：2015-08-06
+                	描述：管理我的趣事-管理我发表的趣事
+         		-->
+                <div data-role="content"  class="wrapper" id="homepage_pic">
+                	<!--
+                                                           作者：DodoMonster
+                  	    时间：2015-08-06
+                                                           描述：管理我的趣事
+                    -->
+                    <ul id="content">
+                    	<li>
+                        	<div class="box clearfix">
+                        		<span class="cancelMyCollect">
+    								<i class="fa fa-heart"></i>
+                            	</span>
+                            	<div class="author">
+                        			<img class="authorPhoto" src="images/userPhoto.jpg" alt=""/>
+                        			<span class="username" id="username">Andy</span>
+                        			<br />
+                        			<span class="showtimes"></span>
+                    			</div>
+                            	<div class="content">
+                                	<div class="main">
+                                    	<p class="txt">
+                                        	轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。
+                                        	轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。
+                                        	轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。
+                                        	轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。
+                                        	轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。轻轻的我走了，正如我轻轻的来；我轻轻的招手，作别西天的云彩。
+                                    	</p>
+                                    	<div class="showImg">
+                                        	<img class="pic" src="images/img1.jpg" alt=""/>
+                                    	</div>
+                                	</div>
+                                	<div class="info clearfix">
+                                    	<i class="fa fa-thumbs-o-up"></i>
+                                        <span class="number vote-number">4218</span> 
+                                    	<i class="fa fa-share-alt"></i>
+                                        <span class="number share-number">18</span>
+                                    	<i class="fa fa-comment-o"></i>
+                                        <span class="number comments-number">18</span>
+                                	</div>
+                                	<div class="stats-button">
+                                    	<span class="share">
+                                            <i class="fa fa-slideshare" id="shareIcon"></i>
+                                    	</span>
+                                	</div>      
+                        		</div>
+                    		</div>
+                    	</li>
+                    </ul>
+        		</div>
+        		    
+        		    <!--
+                	作者：716282978@qq.com
+                	时间：2015-08-06
+                	描述：图片弹出层
+                	-->
+                <div id="showImgFrame"></div><!--显示图片处-->
+                <div id="credit"></div><!--屛罩-->
+                	<!--
+                    	作者：716282978@qq.com
+                    	时间：2015-08-11
+                    	描述：删除提示确认框
+                    -->
+                	<div id="deleteTip">
+                		<p class="deleteTip-header">
+                			<i class="fa fa-exclamation-circle"></i>
+                			删除确认
+                		</p>
+                		<p class="deleteTip-content">
+                			<i class="fa fa-question-circle"></i>
+                			确认删除这条趣事吗？
+                		</p>
+                		<span id="cancelBtn">取消</span>
+                		<span id="confirmBtn">确认</span>
+               		</div>
+        		    <!--
+                	作者：716282978@qq.com
+                	时间：2015-08-07
+                	描述：分享弹出层
+                	-->
+                <div id="showShareFrame">
+                	<p>分享给朋友</p>
+                	<ol class="sharePlace">
+                		<li class="weixinQuan">
+                			<a href="#"><img src="images/share_weixinQuan.png"></a>
+                			<br />
+                			<span>微信朋友圈</span>
+                		</li>
+                		<li class="weixin">
+                			<a href="#"><img src="images/share_weixin.jpg"></a>
+                			<br />
+                			<span>微信好友</span>
+                		</li>
+                		<li class="qqFriend">
+                			<a href="#"><img src="images/share_qq.png"></a>
+                            <br />
+                			<span>QQ好友</span>
+                		</li>
+                		<li class="qzone">
+                			<a href="#"><img src="images/share_qzone.jpg"></a>
+                			<br />
+                			<span>QQ空间</span>
+                		</li>
+                		<li class="weibo">
+                			<a href="#"><img src="images/share_weibo.png"></a>
+                			<br />
+                			<span>新浪微博</span>
+                		</li>
+                		<li class="bdTieba">
+                			<a href="#"><img src="images/share_bdtieba.png"></a>
+                			<br />
+                			<span>百度贴吧</span>
+                		</li>
+                	</ol>
+                	<hr />
+                	<ol class="operation" id="operation">
+                		<li id="copy">
+                			<a href="#"><i class="fa fa-chain"></i></a>
+                			<span>复制</span>
+                		</li>
+                		<li id="collect">
+                			<a href="#"><i class="fa fa-heart-o"></i></a>
+                			<span>收藏</span>
+                		</li>
+                		<li id="report">
+                			<a href="#"><i class="fa fa-ban"></i></a>
+                			<span>举报</span>
+                		</li>
+                	</ol>
+                </div>
+			</div>
+			<!--
+            	作者：DodoMonster
+            	时间：2015-08-06
+            	描述：主页最热趣事footer
+     		-->  
+    	</div>
+	</body>
+</html>

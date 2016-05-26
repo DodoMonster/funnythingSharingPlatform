@@ -1,0 +1,57 @@
+.manageNav li{
+	width:48% !important;
+}
+.content-block #manage  .fa{
+	float: right;
+	color: #f00;
+	font-size: 20px;
+}
+#deleteTip{
+	position: fixed;
+	*position: absolute;
+	z-index: 1004;
+	height:150px;
+	width:250px;
+	border: 1px solid #ccc;
+	border-radius:5px ;
+	background: #fff;
+	display: none;
+}
+#deleteTip .deleteTip-header .fa{
+	color: #FF0000;
+	font-size: 20px;
+}
+#deleteTip .deleteTip-content .fa{
+	color: #FADB4E;
+	font-size: 20px;
+}
+.deleteTip-header{
+	text-align: center;
+	font-size: 18px;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.deleteTip-content{
+	font-size: 15px;
+	text-align: left;
+	padding-left: 15px;
+	padding-bottom: 30px;
+	border-bottom:1px solid #ccc ;
+}
+#deleteTip span{
+	color: #00BB9C;
+	display: inline-block;
+	width:100px;
+	padding:9px 11px;
+	text-align: center;
+	font-size: 16px;
+}
+#cancelBtn{
+	float: left;
+	border-right:1px solid #ccc ;
+	cursor: pointer;
+}
+#confirmBtn{
+	float:right;
+	cursor: pointer;
+}
